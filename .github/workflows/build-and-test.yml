@@ -37,7 +37,7 @@ jobs:
         run: npm run test:unit
 
       - name: Run integration tests
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           build: npm run build
           start: npm run start
@@ -47,7 +47,7 @@ jobs:
           spec: test/integration/**/*
 
       - name: Run e2e tests
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           build: npm run build
           start: npm run start

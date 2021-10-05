@@ -1,29 +1,27 @@
-import { useEffect } from "react"
+import { useEffect } from 'react';
 
-import { selectTheme, Theme, toggleTheme } from "store/slices/AppSlice"
+import { selectTheme, Theme, toggleTheme } from 'store/slices/AppSlice';
 import { store } from 'store/store';
 
-const storedTheme = window.localStorage.getItem('theme') as (Theme | undefined)
-
 const useTheme = (): void => {
-  let theme = selectTheme(store.getState())
+  const theme = selectTheme(store.getState());
 
   useEffect(() => {
-    if (storedTheme) store.dispatch(toggleTheme(storedTheme))
-  }, [])
+    const storedTheme = localStorage.getItem('theme') as Theme | undefined;
+    if (storedTheme) store.dispatch(toggleTheme(storedTheme));
+  }, []);
 
   useEffect(() => {
     if (theme === Theme.Dark) {
-      document.body.classList.remove(Theme.Light)
-      document.body.classList.add(Theme.Dark)
-      localStorage.setItem('theme', Theme.Dark)
+      document.body.classList.remove(Theme.Light);
+      document.body.classList.add(Theme.Dark);
+      localStorage.setItem('theme', Theme.Dark);
     } else if (theme === Theme.Light) {
-      document.body.classList.remove(Theme.Dark)
-      document.body.classList.add(Theme.Light)
-      localStorage.setItem('theme', Theme.Light)
+      document.body.classList.remove(Theme.Dark);
+      document.body.classList.add(Theme.Light);
+      localStorage.setItem('theme', Theme.Light);
     }
+  }, [theme]);
+};
 
-  }, [ theme ])
-}
-
-export default useTheme
+export default useTheme;

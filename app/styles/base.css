@@ -1,4 +1,4 @@
-@import './abstracts/_variables.css';
+@import './variables.css';
 
 *, *: after, *: before {
   box-sizing: inherit;
