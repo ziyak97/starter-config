@@ -15,7 +15,7 @@
     "plugin:jest/recommended",
     "plugin:jest/style",
     "eslint:recommended",
-    "testing-library",
+    "plugin:testing-library/react",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
@@ -28,7 +28,7 @@
     "no-undef": 0,
     "no-unused-vars": 0,
     "no-shadow": 0,
-    "@typescript-eslint/no-shadow": ["error"]  ,
+    "@typescript-eslint/no-shadow": ["error"],
     "@next/next/no-document-import-in-page": 0
   }
 }
