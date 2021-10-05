@@ -1,0 +1,112 @@
+.container {
+  position: relative;
+  width: 100%;
+  border-bottom: 2px dashed #555;
+  margin: 4rem auto 1rem;
+
+  /* Border animation */
+
+  &::after {
+    position: relative;
+    top: 2px;
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #d16dff;
+    content: '';
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: 0%;
+    transition: all 500ms ease;
+  }
+
+  &:focus-within {
+    border-color: transparent;
+
+    label {
+      transform: scale(0.8) translateY(-30px);
+    }
+
+    &::after {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+  }
+
+  /* Label animation */
+
+  label {
+    position: absolute;
+    z-index: -1;
+    top: 4px;
+    left: 0;
+    color: #555;
+    font-size: 1.2rem;
+    transform-origin: 0%;
+    transition: transform 400ms;
+  }
+
+  input {
+    overflow: hidden;
+    width: 100%;
+    padding: 0.25rem 0;
+    border: none;
+    margin: 0;
+    background: none;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    outline: none;
+    transition: border 500ms;
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+      caret-color: black;
+      -webkit-text-fill-color: black !important;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+    &::-webkit-input-placeholder {
+      /* Edge */
+      color: transparent;
+    }
+
+    &::placeholder {
+      color: transparent;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      margin: 0;
+      -webkit-appearance: none;
+    }
+
+    /* Firefox */
+
+    &[type='number'] {
+      -moz-appearance: textfield;
+    }
+
+
+    &:valid {
+      color: black;
+    }
+    
+    &:invalid {
+      color: orangered;
+    }
+
+    &:not(:placeholder-shown) + label {
+      transform: scale(0.8) translateY(-30px);
+    }
+
+    &:-webkit-autofill + label {
+      transform: scale(0.8) translateY(-30px);
+    }
+  }
+}
+

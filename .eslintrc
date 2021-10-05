@@ -1,0 +1,34 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:jest/recommended",
+    "plugin:jest/style",
+    "eslint:recommended",
+    "testing-library",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:react/recommended",
+    "eslint-config-postcss"
+  ],
+  "rules": {
+    "react/prop-types": 0,
+    "react/react-in-jsx-scope": 0,
+    "no-undef": 0,
+    "no-unused-vars": 0,
+    "no-shadow": 0,
+    "@typescript-eslint/no-shadow": ["error"]  ,
+    "@next/next/no-document-import-in-page": 0
+  }
+}

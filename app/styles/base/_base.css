@@ -1,0 +1,12 @@
+@import './abstracts/_variables.css';
+
+*, *: after, *: before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
