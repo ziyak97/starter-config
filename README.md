@@ -55,7 +55,3 @@ To verify your static typing run the following command.
 ```
 npm run type:check
 ```
-
-## 🧱 Tech Stack
-![Technologies](Technologies.png)
-
